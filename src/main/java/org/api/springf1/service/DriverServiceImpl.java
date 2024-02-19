@@ -61,4 +61,9 @@ public class DriverServiceImpl implements DriverService {
                 .orElseThrow(() -> new DriverNotFoundException("Driver not found"));
         driverRepository.delete(driver);
     }
+
+    public DriverDTO findByCodeIgnoreCase(Driver driver) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findByCodeIgnoreCase'");
+    }
 }

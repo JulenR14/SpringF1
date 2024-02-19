@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringF1Application<SpringF1>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "org.api.springf1.SpringF1Application",
+            "projectName": "SpringF1",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
