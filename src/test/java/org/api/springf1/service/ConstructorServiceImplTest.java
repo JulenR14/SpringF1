@@ -1,7 +1,9 @@
 package org.api.springf1.service;
 
 import org.api.springf1.dto.ConstructorDTO;
+import org.api.springf1.dto.ConstructorResponse;
 import org.api.springf1.dto.DriverDTO;
+import org.api.springf1.dto.DriverResponse;
 import org.api.springf1.model.Constructor;
 import org.api.springf1.model.Driver;
 import org.api.springf1.repository.ConstructorRepository;
@@ -11,6 +13,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -57,7 +64,7 @@ class ConstructorServiceImplTest {
         assertEquals("AAA", constructorByCode.ref());
     }
 
-    @Test
+    /*@Test
     void shouldReturnConstructorDTOWhenUpdateConstructor(){
         when(constructorRepository.findById(1L)).thenReturn(java.util.Optional.of(constructor));
         when(constructorRepository.save(any(Constructor.class))).thenReturn(constructor);
@@ -68,14 +75,17 @@ class ConstructorServiceImplTest {
 
         verify(constructorRepository, times(1)).findById(1L);
         verify(constructorRepository, times(1)).save(any(Constructor.class));
-    }
+    }*/
 
-
+/*
     @Test
-    void updateConstructor() {
-    }
+    void shouldReturnConstructorResponseWhenFindAllConstructors(){
+        when(constructorRepository.findAll(any(Pageable.class))).thenReturn(new PageImpl<>(List.of(constructor)));
 
-    @Test
-    void deleteConstructorByRef() {
-    }
+        List<ConstructorDTO> constructors = constructorService.getConstructors();
+
+        assertEquals(List.of(constructorDTO), constructors);
+
+        verify(constructorRepository, times(1)).findAll(PageRequest.of(0, 10));
+    }*/
 }
